@@ -1,7 +1,7 @@
 # migrate-wordpress
 Migrate WordPress efficiently, quickly, effectively, reliably
 
-Download these files to your DESTINATION folder, make sure the migrate.sh file is executable and then run the following command:
+Download these files to your DESTINATION server, make sure the migrate.sh file is executable and then run the following command:
 
 Usage: ./migrate.sh user@originip originfolder destinationfolder [-f]
 
