@@ -72,7 +72,7 @@ echo "Rsync Complete"
 echo ""
 echo "Restoring database"
 
-mysql --user=$WPDBUSER --password=$WPDBPASS $WPDBNAME < $3../mysqldump.php 
+mysql --user=$WPDBUSER --password=$WPDBPASS $WPDBNAME < "$3../mysqldump.php"
 
 echo ""
 echo "DB restore complete"
