@@ -20,6 +20,8 @@ Then run the command. **Be sure you are ready to wipe your destination files and
 
 *-f will bypass the confirmation prompt and force the origin backup to run every time (if you re-run this otherwise, it will re-run rsync and the DB restore but not the DB backup)*
 
+**Ensure your folders have a trailing slash.**
+
 This will connect via SSH to your origin server, read your wp-config creds, backup your DB, rsync all the files to your destination, then restore the DB at your destination.
 
 It is smart enough to exclude server-specific files like db.php, advanced-cache.php and more.
