@@ -80,6 +80,7 @@ echo ""
 echo "Before updating your DNS to point at your new server, you should test first by editing your local HOSTS file to point your website URL at your new server IP for your PC. This will let you test safely."
 echo "You can re-run this script with the -f parameter to refresh your migration at any time. This will create a fresh DB backup and resync the origin files to your destination server."
 
-#todo: optionally flush redis cache upon completion
+# flush redis cache upon completion
+redis-cli FLUSHALL
 
 
