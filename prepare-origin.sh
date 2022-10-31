@@ -31,12 +31,12 @@ fi
 
 if [ ! -f "$1mysqldump.php" ] || [ "$2" = "-f" ]; then 
     echo "Creating a backup and placing it in mysqldump.php in your root web folder so that it cannot be downloaded maliciously."
-    rm "$1mysqldump.php" 2> /dev/null
+    rm "$1../mysqldump.php" 2> /dev/null
     mysqldump --user=$WPDBUSER --password=$WPDBPASS --no-tablespaces $WPDBNAME > "$1../mysqldump.sql"
     sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' -i "$1../mysqldump.sql"
 
 else
-    echo "$1mysqldump.php already exists - skipping recreating dump file."
+    echo "$1../mysqldump.php already exists - skipping recreating dump file."
     echo "You can remove the origin dump file and re-run the backup by re-running migrate with the 4th parameter of -f"
 
     echo ""
