@@ -29,11 +29,13 @@ else
     echo "Connected to origin MySQL version $DBVERSION"
 fi
 
-if [ ! -f "$1mysqldump.php" ] || [ "$2" = "-f" ]; then 
+if [ ! -f "$1../mysqldump.sql" ] || [ "$2" = "-f" ]; then 
     echo "Creating a backup and placing it in mysqldump.php in your root web folder so that it cannot be downloaded maliciously."
     rm "$1../mysqldump.php" 2> /dev/null
     #added gtid-purged=off option to fix security errors on restore https://stackoverflow.com/questions/44015692/access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operat
     mysqldump --user=$WPDBUSER --password=$WPDBPASS --no-tablespaces --set-gtid-purged=OFF $WPDBNAME > "$1../mysqldump.sql"
+    #if above mysqldump fails, it's probably because of the --set-gtid-purged parameter
+#    mysqldump --user=$WPDBUSER --password=$WPDBPASS --no-tablespaces $WPDBNAME > "$1../mysqldump.sql"
 
 else
     echo "$1../mysqldump.php already exists - skipping recreating dump file."
