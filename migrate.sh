@@ -63,9 +63,9 @@ else
 fi
 
 echo "Starting rsync to remote server"
-echo "rsync -chavzP --stats  $1:$2 $3 --exclude 'wp-admin' --exclude 'wp-includes' --exclude 'wp-config.php' --exclude 'wp-content/db.php' --exclude 'wp-content/advanced-cache.php' --exclude 'wp-content/debug.log' --exclude 'wp-content/object-cache.php' --exclude 'wp-content/mu-plugins' --exclude 'wp-content/updraft' --exclude 'wp-content/w3tc-config' --exclude 'wp-content/cache'  --exclude 'robots.txt'"
+echo "rsync -chavzP --stats  $1:$2 $3 --exclude 'wp-config.php' --exclude 'wp-content/db.php' --exclude 'wp-content/advanced-cache.php' --exclude 'wp-content/debug.log' --exclude 'wp-content/object-cache.php' --exclude 'wp-content/updraft' --exclude 'wp-content/w3tc-config' --exclude 'wp-content/cache'  --exclude 'robots.txt'"
 
-rsync -chavzP --stats  $1:$2 $3 --exclude 'wp-admin' --exclude 'wp-includes' --exclude 'wp-config.php' --exclude 'wp-content/db.php' --exclude 'wp-content/advanced-cache.php' --exclude 'wp-content/debug.log' --exclude 'wp-content/object-cache.php' --exclude 'wp-content/mu-plugins' --exclude 'wp-content/updraft' --exclude 'wp-content/w3tc-config' --exclude 'wp-content/cache'  --exclude 'robots.txt'
+rsync -chavzP --stats  $1:$2 $3 --exclude 'wp-config.php' --exclude 'wp-content/db.php' --exclude 'wp-content/advanced-cache.php' --exclude 'wp-content/debug.log' --exclude 'wp-content/object-cache.php' --exclude 'wp-content/updraft' --exclude 'wp-content/w3tc-config' --exclude 'wp-content/cache'  --exclude 'robots.txt'
 rsync -chavzP --stats  "$1:$2../mysqldump.sql" "$3../"
 
 echo "Rsync Complete"
